@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roue Orange Communuaté">
+    <title>Roue Orange Communuaté</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            body {
+                background:url('https://e7.pngegg.com/pngimages/618/729/png-clipart-party-cracker-congratulation-holidays-text.png');
+            }
+        </style>
+</head>
+
+<body class="py-5 ">
+    <div class="container p-4 bg-white align-middle">
+        <div class="row">
+            <h2 class="content-head is-center">FELICITATIONS !</h2>
+            <p>
+                Formulaire de prise de contact pour les prix de la communauté
+            </p>
+        </div>
+        <div class="row">
+            <form class="gform pure-form pure-form-stacked" method="POST" data-email="toure5013@gmail.com"
+                action="https://script.google.com/macros/s/AKfycbz7alLh0EAm8cj8iPwyC1ApwCvBUy2VgYJoGq88LI2oCgflVvaaryplykiC5u_nOC9-KQ/exec">
+                <!-- change the form action to your script url -->
+
+                <div class="form-elements mt-4">
+                    <div class="form-group mb-3">
+                        <label for="firstname">Nom: </label>
+                        <input type="text" id="firstname" class="form-control" name="firstname" placeholder="Votre nom"
+                            value="test" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="lastname">Prenom: </label>
+                        <input type="text" id="lastname" class="form-control" name="lastname" placeholder="Votre prenom"
+                            value="test2" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="email"><em>Votre</em> Email:</label>
+                        <input id="email" name="email" class="form-control" type="tel" value="test@test.com" required
+                            placeholder="test@test.com" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="email"><em>Votre</em> Numéro de téléphone:</label>
+                        <input id="phone" name="phone" class="form-control" type="tel" value="070707070707" required
+                            placeholder="070707070707" />
+                    </div>
+
+                    <div class="form-group mb-3" style="display: none;">
+                        <input id="price" name="price" class="form-control" type="hidden" value="prix 1" required>
+                    </div>
+
+                    <div class="form-group mb-3" style="display: none;">
+                        <label for="other">Email: </label>
+                        <textarea id="other" name="other" class="form-control" rows="10" value="suplement"
+                            placeholder="your.name@email.com"> D'autres information</textarea>
+                    </div>
+
+                    <div class="form-group mb-3 honeypot-field" style="display:none">
+                        <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field;
+                            must be
+                            empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+                        <input id="honeypot" type="text" name="honeypot" value="" readonly />
+                    </div>
+
+                    <div class="text-right row">
+                        <div class="col-6">
+                            <button class="btn btn-success "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                              </svg>&nbsp;Envoyer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customise the Thankyou Message People See when they submit the form: -->
+                <div class="thankyou_message alert alert-info" style="display:none;">
+                    <h2><em>Merci</em> Nous vous revenons sous peu! </h2>
+                    <br>
+                    <a href="https://communaute.orange.ci/" class="btn btn-warning">Revenir sur le portail</a> 
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Submit the Form to Google Using "AJAX" -->
+    <script data-cfasync="false">
+        (function () {
+            // get all data in form and return object
+            function getFormData(form) {
+                var elements = form.elements;
+                var honeypot;
+
+                var fields = Object.keys(elements).filter(function (k) {
+                    if (elements[k].name === "honeypot") {
+                        honeypot = elements[k].value;
+                        return false;
+                    }
+                    return true;
+                }).map(function (k) {
+                    if (elements[k].name !== undefined) {
+                        return elements[k].name;
+                        // special case for Edge's html collection
+                    } else if (elements[k].length > 0) {
+                        return elements[k].item(0).name;
+                    }
+                }).filter(function (item, pos, self) {
+                    return self.indexOf(item) == pos && item;
+                });
+
+                var formData = {};
+                fields.forEach(function (name) {
+                    var element = elements[name];
+
+                    // singular form elements just have one value
+                    formData[name] = element.value;
+
+                    // when our element has multiple items, get their values
+                    if (element.length) {
+                        var data = [];
+                        for (var i = 0; i < element.length; i++) {
+                            var item = element.item(i);
+                            if (item.checked || item.selected) {
+                                data.push(item.value);
+                            }
+                        }
+                        formData[name] = data.join(', ');
+                    }
+                });
+
+                // add form-specific values into the data
+                // formData.formDataNameOrder = JSON.stringify(fields);
+                formData.formGoogleSheetName = form.dataset.sheet || "roue_communautaire"; // default sheet name
+                formData.formGoogleSendEmail
+                    = form.dataset.email || ""; // no email by default
+
+                return { data: formData, honeypot: honeypot };
+            }
+
+            function handleFormSubmit(event) {  // handles form submit without any jquery
+                event.preventDefault();           // we are submitting via xhr below
+                var form = event.target;
+                var formData = getFormData(form);
+                var data = formData.data;
+
+                // If a honeypot field is filled, assume it was done so by a spam bot.
+                if (formData.honeypot) {
+                    return false;
+                }
+
+                disableAllButtons(form);
+                var url = form.action;
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', url);
+                // xhr.withCredentials = true;
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        form.reset();
+                        var formElements = form.querySelector(".form-elements")
+                        if (formElements) {
+                            formElements.style.display = "none"; // hide form
+                        }
+                        var thankYouMessage = form.querySelector(".thankyou_message");
+                        if (thankYouMessage) {
+                            thankYouMessage.style.display = "block";
+                        }
+                    }
+                };
+                // url encode form data for sending as post data
+                var encoded = Object.keys(data).map(function (k) {
+                    return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+                }).join('&');
+                xhr.send(encoded);
+            }
+
+            function loaded() {
+                // bind to the submit event of our form
+                var forms = document.querySelectorAll("form.gform");
+                for (var i = 0; i < forms.length; i++) {
+                    forms[i].addEventListener("submit", handleFormSubmit, false);
+                }
+            };
+            document.addEventListener("DOMContentLoaded", loaded, false);
+
+            function disableAllButtons(form) {
+                var buttons = form.querySelectorAll("button");
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].disabled = true;
+                }
+            }
+        })();
+    </script>
+    <!-- END -->
+
+</body>
+
+</html>
